@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { HomeScreen } from "./src/screens/HomeScreen";
 import { LandingScreen } from "./src/screens/LandingScreen";
+import { SearchScreen } from "./src/screens/SearchScreen";
 
 import { Provider } from "react-redux";
 import { store } from "./src/redux";
@@ -11,28 +12,37 @@ import { store } from "./src/redux";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
+import { RestaurantScreen } from "./src/screens/RestaurantScreen";
+import { FoodDetailScreen } from "./src/screens/FoodDetailScreen";
+
 
 const switchNavigator = createSwitchNavigator({
-  // landingStack: {
-  //   screen: createStackNavigator(
-  //     {
-  //       Landing: LandingScreen,
-  //       // search address screen
-  //     },
-  //     {
-  //       defaultNavigationOptions: {
-  //         headerShown: false,
-  //       },
-  //     }
-  //   ),
-  // },
+  landingStack: {
+    screen: createStackNavigator(
+      {
+        Landing: LandingScreen,
+        // search address screen
+      },
+      {
+        defaultNavigationOptions: {
+          headerShown: false,
+        },
+      }
+    ),
+  },
 
   homeStack: createBottomTabNavigator({
     // Home tab Icon
     home: {
       screen: createStackNavigator({
         HomePage: HomeScreen,
-      }),
+        SearchPage: SearchScreen,
+        RestaurantPage: RestaurantScreen,
+        FoodDetailPage: FoodDetailScreen,
+      },{
+        defaultNavigationOptions: {
+          headerShown: false,
+        }}),
       navigationOptions: {
         tabBarIcon: ({ focused, tintColor }) => {
           let icon =

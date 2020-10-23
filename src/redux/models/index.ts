@@ -2,6 +2,7 @@ import { Address } from "expo-location";
 
 //category
 export interface Category {
+  id: string;
   title: String;
   icon: String;
 }
@@ -14,7 +15,7 @@ export interface FoodModel {
   category: string;
   price: string;
   readyTime: number;
-  image: [string];
+  images: [string];
 }
 
 //Restaurant Model

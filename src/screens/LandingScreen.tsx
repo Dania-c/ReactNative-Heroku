@@ -23,7 +23,7 @@ const _LandingScreen: React.FC<LandingProps> = (props) => {
   const [address, setAddress] = useState<Location.Address>();
 
   const [displayAddress, setDisplayAddress] = useState(
-    "Waiting for current location"
+    "Waiting Ouff "
   );
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const _LandingScreen: React.FC<LandingProps> = (props) => {
 
         for (let item of addressResponse) {
           setAddress(item);
-          onUpdateLocation(address)
+          onUpdateLocation(item)
           let currentAddress = `${item.name},${item.street}, ${item.postalCode}, ${item.country}`;
           setDisplayAddress(currentAddress);
 

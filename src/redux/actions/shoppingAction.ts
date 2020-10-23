@@ -20,11 +20,11 @@ export type ShoppingAction = AvailabilityAction | ShoppingErrorAction;
 
 // Trigger actions from components
 
-export const onAvailability = () => {
+export const onAvailability = (postCode: string) => {
   return async (dispatch: Dispatch<ShoppingAction>) => {
     try {
       const response = await axios.get<FoodAvailability>(
-        `${BASE_URL}/food/availability/78787878`
+        `${BASE_URL}food/availability/${postCode}`
       );
       if (!response) {
         dispatch({

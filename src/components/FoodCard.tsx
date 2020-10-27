@@ -32,12 +32,16 @@ const FoodCard: React.FC<FoodCardProps> =({item,onTap}) => {
 
 const styles = StyleSheet.create({
 container: {
+    flex:1,
+    width: Dimensions.get('screen').width-20,
     margin: 10, 
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    //width: screenWidth-20,
-    height: 230,
     borderRadius:20,
+    backgroundColor: '#FFF',
+    height: 100,
+    justifyContent: 'flex-start',
+    borderWidth:1,
+    borderColor: '#E5E5E5',
+    flexDirection:'row',
 
     },
 img: {

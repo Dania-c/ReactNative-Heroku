@@ -9,6 +9,7 @@ export interface Category {
 
 // foodModel
 export interface FoodModel {
+  filter(arg0: (item: any) => any): readonly unknown[] | null | undefined;
   _id: string;
   name: string;
   description: string;
@@ -54,5 +55,5 @@ export interface UserState {
 
 export interface ShoppingState {
   availability: FoodAvailability;
-  //other models
+  availableFoods: [FoodModel];
 }

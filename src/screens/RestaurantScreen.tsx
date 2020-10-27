@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
       fontWeight:'500',
     },
     body: {
-      flex: 9,
+      flex: 11,
       justifyContent: 'flex-start',
       alignItems: "center",
       backgroundColor: "#FFF",
